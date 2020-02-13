@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Albums /> should render Cinderella 1`] = `
+Array [
+  <h1>
+    Cinderella
+  </h1>,
+  <ul>
+    <li>
+      Night Songs
+    </li>
+    <li>
+      Long Cold Winter 
+    </li>
+    <li>
+      Heartbreak Station
+    </li>
+  </ul>,
+]
+`;
