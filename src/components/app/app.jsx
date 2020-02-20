@@ -1,5 +1,10 @@
 import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
+import {Switch, Route, BrowserRouter} from "react-router-dom";
+import ArtistQuestionScreen from "../artist-question-screen/artist-question-screen.jsx";
+import GenreQuestionScreen from "../genre-question-screen/genre-question-screen.jsx";
+import {GameType} from "../../const.js";
+
 import WelcomeScreen from "../welcome-screen/welcome-screen.jsx";
 
 class App extends PureComponent {
@@ -8,13 +13,28 @@ class App extends PureComponent {
   }
 
   render() {
-    const {errorsCount} = this.props;
+    const {questions} = this.props;
 
     return (
-      <WelcomeScreen
-        errorsCount = {errorsCount}
-        onWelcomeButtonClick={() => {}}
-      />
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/">
+            {this._renderGameScreen()}
+          </Route>
+          <Route exact path="/artist">
+            <ArtistQuestionScreen
+              question={questions[1]}
+              onAnswer={() => {}}
+            />
+          </Route>
+          <Route exact path="/genre">
+            <GenreQuestionScreen
+              question={questions[0]}
+              onAnswer={() => {}}
+            />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     );
   }
 }
