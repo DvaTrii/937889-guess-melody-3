@@ -10,6 +10,10 @@ import WelcomeScreen from "../welcome-screen/welcome-screen.jsx";
 class App extends PureComponent {
   constructor(props) {
     super(props);
+
+    this.state = {
+      step: -1,
+    };
   }
 
   render() {
