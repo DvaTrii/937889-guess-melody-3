@@ -35,6 +35,33 @@ class App extends PureComponent {
     }
   }
 
+  if (question) {
+    switch (question.type) {
+      case GameType.ARTIST:
+        return (
+          <ArtistQuestionScreen
+            question={question}
+            onAnswer={() => {
+              this.setState((prevState) => ({
+                step: prevState.step + 1,
+              }));
+            }}
+          />
+        );
+      case GameType.GENRE:
+        return (
+          <GenreQuestionScreen
+            question={question}
+            onAnswer={() => {
+              this.setState((prevState) => ({
+                step: prevState.step + 1,
+              }));
+            }}
+          />
+        );
+    }
+  }
+
   render() {
     const {questions} = this.props;
 
