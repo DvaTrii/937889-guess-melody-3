@@ -2,6 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import ArtistQuestionScreen from './artist-question-screen.jsx';
 
+
 const question = {
   type: `artist`,
   song: {
@@ -25,6 +26,7 @@ it(`ArtistQuestionScreen is rendered correctly`, () => {
       <ArtistQuestionScreen
         question={question}
         onAnswer={() => {}}
+        renderPlayer={() => {}}
       />, {
         createNodeMock: () => {
           return {};
