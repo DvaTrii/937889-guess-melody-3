@@ -4,8 +4,6 @@ import {GameType} from "../../const.js";
 import {connect} from "react-redux";
 import Mistakes from "../mistakes/mistakes.jsx";
 
-
-
 const GameScreen = (props) => {
   const {
     type,
